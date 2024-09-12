@@ -1,0 +1,45 @@
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+
+# Django static and media files
+static/
+media/
+
+# Environment variables
+gasmap/.env
+
+# Local configuration
+local_settings.py
+
+# VSCode settings
+.vscode/
+
+# IDEs
+.idea/
+*.swp
+
+# Database
+*.sqlite3
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Docker
+*.dockerignore
+Dockerfile
+docker-compose.yml
+

@@ -1,0 +1,21 @@
+{% extends 'gasmapApp/base.html' %}
+
+{% block title %}Elimina Indirizzo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">🗑️ Elimina Indirizzo</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <p class="text-center mb-4">❓ Sei sicuro di voler eliminare l'indirizzo: "{{ item.name }}"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-danger">✅ Elimina</button>
+                    <a href="{% url 'gasmapApp:item_list' %}" class="btn btn-secondary ms-2">❌ Non sono sicuro</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
