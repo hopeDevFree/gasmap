@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^tnnuw5280n3!%=-l(c6!k005cb(0*sru-qxtg3)*1-x@7@v(=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['gasmap.onrender.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 # Application definition
 
