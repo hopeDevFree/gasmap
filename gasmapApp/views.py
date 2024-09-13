@@ -173,3 +173,7 @@ def search_address(request):
 
 def add_station(request):
     return redirect('gasmapApp:item_list')
+
+
+def home(request):
+    return render(request, 'gasmapApp/home.html')
