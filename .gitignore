@@ -9,7 +9,6 @@ __pycache__/
 */migrations/*.pyc
 
 # Django static and media files
-gasmapApp/static/
 media/
 
 # Environment variables

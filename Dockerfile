@@ -12,13 +12,8 @@ COPY . .
 
 RUN chmod +x docker-entrypoint.sh
 
-RUN python manage.py collectstatic --noinput
-
 EXPOSE 8005
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8005"]
-
-
-

@@ -1,0 +1,213 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+.btn-dark {
+  background-color: #1B1D24;
+  border-radius: 10px;
+  border: none;
+  color: #F2EFEA;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.btn-dark:hover {
+  background-color: #303238;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #1B1D24;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 60em;
+}
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.masthead-brand {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold; /* Peso del testo */
+  color: #F2EFEA;
+  margin-bottom: 0;
+
+  position: relative; /* Posizione relativa per gestire il margine superiore del pulsante */
+  top: 1rem; /* Margine superiore */
+}
+
+.masthead-nav {
+  margin-top: 2rem; /* Aggiungi margine superiore per spostare il pulsante più in basso */
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+.lead {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+
+}
+
+.banner{
+
+max-width:600px;
+
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
+h1.gradient-text {
+  font-size: 56px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold; /* Peso del testo */
+  background: linear-gradient(45deg, #ff6f61, #d1c4e9, #00bcd4, #8bc34a); /* Gradiente di colore */
+  background-size: 800% 800%; /* Dimensioni del gradiente per un'animazione fluida e continua */
+  -webkit-background-clip: text; /* Applicare il gradiente al testo */
+  -webkit-text-fill-color: transparent; /* Rendere il testo trasparente per mostrare il gradiente */
+  background-clip: text; /* Applicare il gradiente al testo */
+  color: transparent; /* Rendere il testo trasparente */
+  animation: gradientMove 10s linear infinite; /* Applicare l'animazione con durata più lunga e movimento continuo */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+
+
+
+
+  .container {
+            position: relative;
+            height: 100vh; /* Imposta l'altezza del contenitore a tutta l'altezza della finestra */
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .left {
+            position: relative;
+
+        }
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+
+
+.header{
+    z-index: 5;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: -82px;
+    padding-top: 0;
+    transition: background-color .2s ease-in-out,top .2s ease-in-out;
+}

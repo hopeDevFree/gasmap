@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--    <link rel="icon" href="../../../../favicon.ico"> -->
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
 
     <title>Cover Template for Bootstrap</title>
 
@@ -14,31 +14,34 @@
 
     {% load static %}
     <!-- Custom styles for this template -->
-    <link href="{% static 'gasmapapp/index.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'gasmapApp/index.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
-
 </head>
 
 <body class="text-center">
 
-<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-        <div class="masthead">
-            <h3 class="masthead-brand">CF</h3>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column justify-content-center align-items-center">
+    <header class="mb-auto d-flex  header ">
+
+        <div class="left">
+            <h3>CF</h3>
         </div>
-        <div class="masthead">
-            <nav class="nav nav-masthead justify-content-center">
-                <a href="{% url 'gasmapApp:item_list' %}">
-                    <button type="button" class="btn btn-dark">Funzioni</button>
-                </a>
-            </nav>
-        </div>
+        <div class="centered">
+            <a href="{% url 'gasmapApp:item_list' %}">
+                <button type="button" class="btn btn-dark" aria-label="Visualizza funzioni">Funzioni</button>
+            </a></div>
+        <div class="right">
+            <a href="{% url 'gasmapApp:item_list' %}">
+                <button type="button" class="btn btn-primary" aria-label="Accedi">Login</button>
+            </a></div>
     </header>
+
 
     <main role="main" class="inner cover">
         <h1 class="cover-heading gradient-text">Cheapy Fuel</h1>
-        <p class="lead">Un'app che permette di monitorare facilmente i prezzi dei carburanti, offrendo trasparenza e
-            semplicità nell'accesso alle informazioni.</p>
+        <div class="banner"><p class="lead">Un'app che permette di monitorare facilmente i prezzi dei carburanti,
+            offrendo trasparenza e
+            semplicità nell'accesso alle informazioni.</p></div>
         <p class="lead">
             <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
         </p>
@@ -50,7 +53,6 @@
         </div>
     </footer>
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
