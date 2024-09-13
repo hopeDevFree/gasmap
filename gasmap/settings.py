@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://gasmap.onrender.com']
+
 ROOT_URLCONF = 'gasmap.urls'
 
 TEMPLATES = [
