@@ -1,22 +1,44 @@
-/*
- * Globals
- */
+.btn-primary{
+color: #1B1D24;
+    background-color: #F2EFEA;
+      text-shadow: none;
+      border:none;
+      border-radius: 10px;
+  font-size: 14px;
+    font-family: 'Inter', sans-serif;
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
+    height: 30px; /* Imposta un'altezza fissa per entrambi i pulsanti */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+.btn-secondary{
+color: #1B1D24;
+ background-color: #F2EFEA;
+ border:none;
+ border-radius: 40px;
+ text-shadow:none;
+ font-size: 14px;
+     font-family: 'Inter', sans-serif;
+     height: 50px
+
+}
+
+.btn-primary:hover{
+    color: black;
+    background-color: #ff6f61;
+    text-shadow:none;
+    border: none;
+border-radius: 10px;
+  font-size: 14px;
+    font-family: 'Inter', sans-serif;
+
+  background: linear-gradient(45deg, #ff6f61, #d1c4e9, #00bcd4, #8bc34a); /* Gradiente di colore */
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+
+
 }
 
 .btn-dark {
@@ -26,6 +48,11 @@ a:hover {
   color: #F2EFEA;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+
+    height: 30px; /* Imposta un'altezza fissa per entrambi i pulsanti */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-dark:hover {
@@ -51,7 +78,7 @@ body {
   justify-content: center;
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  box-shadow: none;
 }
 
 .cover-container {
@@ -148,6 +175,11 @@ max-width:600px;
   color: rgba(255, 255, 255, .5);
 }
 
+.cf-title{
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+}
+
 h1.gradient-text {
   font-size: 56px;
   font-family: 'Inter', sans-serif;
@@ -161,18 +193,18 @@ h1.gradient-text {
   animation: gradientMove 10s linear infinite; /* Applicare l'animazione con durata più lunga e movimento continuo */
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
 
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 
 
@@ -206,8 +238,9 @@ h1.gradient-text {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #1B1D24; /* Stesso colore dello sfondo principale */
     margin-bottom: -82px;
     padding-top: 0;
     transition: background-color .2s ease-in-out,top .2s ease-in-out;
 }
+
