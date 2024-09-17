@@ -1,66 +1,85 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CF - Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+    <link
+            rel="stylesheet"
+            as="style"
+            onload="this.rel='stylesheet'"
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>TrackFuel | Home</title>
 
-    {% load static %}
-    <!-- Custom styles for this template -->
-    <link href="{% static 'gasmapApp/index.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
-
-<body class="text-center">
-
-<div class="cover-container d-flex h-100 p-3 mx-auto flex-column justify-content-center align-items-center">
-    <header class="mb-auto d-flex  header ">
-
-        <div class="left">
-            <h3 class="cf-title">CF</h3>
+<body>
+<div class="relative flex size-full min-h-screen flex-col bg-[#1a1a1a] dark group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#363636] px-10 py-3">
+            <div class="flex items-center gap-4 text-white">
+                <div class="size-4">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                                fill="currentColor"
+                        ></path>
+                        <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                                fill="currentColor"
+                        ></path>
+                    </svg>
+                </div>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">TrackFuel</h2>
+            </div>
+            <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Accedi</span>
+            </button>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="@container">
+                    <div class="@[480px]:p-4">
+                        <div
+                                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                                style='width:100%; min-height: 480px; background-size: cover; background-position: center; background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/dbb64df1-c6b5-4fd6-9fa6-0efd6b8e58b0.png");'
+                        >
+                            <div class="flex flex-col gap-2 text-center">
+                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    TrackFuel.
+                                </h1>
+                                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                    Trova e traccia i migliori prezzi per il carburante, risparmiando tempo e denaro.
+                                </h2>
+                            </div>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                                <span class="truncate">Registrati</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="centered">
-            <a href="{% url 'gasmapApp:item_list' %}">
-                <button type="button" class="btn btn-dark" aria-label="Visualizza funzioni">Funzioni</button>
-            </a></div>
-        <div class="right">
-            <a href="{% url 'gasmapApp:item_list' %}">
-                <button type="button" class="btn btn-primary" aria-label="Accedi">Login</button>
-            </a></div>
-    </header>
+
+        <footer class="flex justify-center">
+            <div class="flex max-w-[960px] flex-1 flex-col">
+                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
 
 
-    <main role="main" class="inner cover">
-        <h1 class="cover-heading gradient-text">Cheapy Fuel</h1>
-        <div class="banner"><p class="lead">Un'app che permette di monitorare facilmente i prezzi dei carburanti,
-            offrendo trasparenza e
-            semplicità nell'accesso alle informazioni.</p></div>
-        <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary">Scopri di più</a>
-        </p>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p>Testing.</p>
-        </div>
-    </footer>
+                    <p class="text-[#adadad] text-base font-normal leading-normal">© 2024 TrackFuel. All rights
+                        reserved.</p>
+                </footer>
+            </div>
+        </footer>
+    </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

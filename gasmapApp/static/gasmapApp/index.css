@@ -22,6 +22,7 @@ color: #1B1D24;
  font-size: 14px;
      font-family: 'Inter', sans-serif;
      height: 50px
+  text-align: center;
 
 }
 
@@ -80,6 +81,28 @@ body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: none;
 }
+
+
+.image-container{
+
+        display: flex;
+        flex-direction: column;
+        max-width: 960px;
+        flex-grow: 1;
+}
+
+.background-image{
+
+background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%),
+                      url("https://cdn.usegalileo.ai/sdxl10/dbb64df1-c6b5-4fd6-9fa6-0efd6b8e58b0.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 480px;
+    border-radius: 1rem; /* opzionale, per un effetto arrotondato */
+            max-width: 960px;
+
+   }
 
 .cover-container {
   max-width: 60em;
@@ -172,7 +195,7 @@ max-width:600px;
  * Footer
  */
 .mastfoot {
-  color: rgba(255, 255, 255, .5);
+  color: white;
 }
 
 .cf-title{
@@ -230,6 +253,12 @@ h1.gradient-text {
             right: 0;
         }
 
+
+.p-footer{
+  color: #adadad;
+   font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
 
 
 .header{
