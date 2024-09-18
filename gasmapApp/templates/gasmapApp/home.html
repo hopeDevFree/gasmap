@@ -104,7 +104,7 @@ document.getElementById('signup-button-container').innerHTML = `
 
 
 const data = new URLSearchParams();
-data.append('id_user', '40101020');
+data.append('id_user', user.id);
 
           fetch('{% url "gasmapApp:check_user" %}', {
             method: 'POST',
