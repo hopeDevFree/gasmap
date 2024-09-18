@@ -102,13 +102,17 @@ document.getElementById('signup-button-container').innerHTML = `
                                 </button>
                             </a>`;
 
+
+const data = new URLSearchParams();
+data.append('id_user', '40101020');
+
           fetch('{% url "gasmapApp:check_user" %}', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
                 'X-CSRFToken': '{{ csrf_token }}'
             },
-            body: JSON.stringify({ id_user: user.id })
+            body: data.toString()
         })
 
 
@@ -120,7 +124,8 @@ document.getElementById('signup-button-container').innerHTML = `
                                     <span class="truncate">Registrati</span>
                                 </button>
                             </a>`;
-    }
+
+}
 
 
 </script>

@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.contrib.auth import login
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 
@@ -188,14 +189,16 @@ def home(request):
 
 
 def check_user(request):
-    id_user = request.POST.get('id_user')
+    if request.method == 'POST':
+        id_user = request.POST.get('id_user')
 
-    try:
-        user = User.objects.get(id=id_user)
+        try:
+            user = User.objects.get(id=id_user)
+        except User.DoesNotExist:
 
-    except User.DoesNotExist:
+            user = User(id=id_user)
+            user.save()
 
-        User.objects.create(id=id_user)
-        return redirect('gasmapApp:item_list')
+        return render(request, 'gasmapApp/home.html', {'user': user})
 
-    return render(request, 'gasmapApp/home.html', {'user': user})
+    return HttpResponse('Metodo non supportato', status=405)
