@@ -46,3 +46,19 @@ class Station(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class User(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+
+
+class UserStation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    station = models.ForeignKey('Station', on_delete=models.CASCADE)
+    type = models.CharField(max_length=200)
+
+    class Meta:
+        unique_together = ('user', 'station')
+
+    def __str__(self):
+        return str(self.user.id) + ", " + self.station.name

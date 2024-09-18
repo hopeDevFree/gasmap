@@ -11,5 +11,8 @@ urlpatterns = [
     path('<int:pk>/delete/', views.item_delete, name='item_delete'),
     path('search_address/', views.search_address, name='search_address'),
     path('search_station/', views.search_station, name='search_station'),
-    path('add_station/', views.add_station, name='add_station')
+    path('add_station/', views.add_station, name='add_station'),
+    path('signup', views.signup, name='signup'),
+    path('check_user', views.check_user, name='check_user'),
+    path('home', views.home, name='home')
 ]

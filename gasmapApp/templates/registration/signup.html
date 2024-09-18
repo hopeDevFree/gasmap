@@ -10,14 +10,11 @@
             href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>TrackFuel | Home</title>
-
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>TrackFuel | Registrazione</title>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 <body>
-
 <div class="relative flex size-full min-h-screen flex-col bg-[#1a1a1a] dark group/design-root overflow-x-hidden"
      style='font-family: Inter, "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
@@ -48,29 +45,47 @@
                 <span class="truncate">Accedi</span>
             </button>
         </header>
-        <div class="flex flex-1 justify-center py-5">
+        <div class="px-16 flex flex-1 justify-center py-20 max-w-[30rem] w-full mx-auto">
             <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                 <div class="@container">
                     <div class="@[480px]:p-4">
-                        <div
-                                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                                style='width:100%; min-height: 480px; background-size: cover; background-position: center; background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/dbb64df1-c6b5-4fd6-9fa6-0efd6b8e58b0.png");'
-                        >
-                            <div class="flex flex-col gap-2 text-center">
-                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                    TrackFuel.
-                                </h1>
-                                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                                    Trova subito i prezzi migliori del carburante e risparmia tempo e denaro con
-                                    facilità.
-                                </h2>
+
+
+                        <h1 class="mb-8 text-center text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                            Registrazione
+                        </h1>
+
+                        <form class="space-y-4 md:space-y-6" action="#">
+                            {% csrf_token %}
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                <input type="email" name="email" id="email"
+                                       class="bg-[#363636]  text-[#ADADAD] placeholder-[#ADADAD] border-none text-sm rounded-lg focus:ring-[#ADADAD] focus:border-[#ADADAD] block w-full p-2.5"
+                                       placeholder="nome@esempio.com" required="">
+
+                            </div>
+                            <div>
+                                <label for="password"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+
+                                <input type="password" name="password" id="password"
+                                       class="bg-[#363636]  text-[#ADADAD] placeholder-[#ADADAD] border-none text-sm rounded-lg focus:ring-[#ADADAD] focus:border-[#ADADAD] block w-full p-2.5"
+                                       placeholder="••••••••" required="">
                             </div>
 
 
-                            <div id="signup-button-container"></div>
+                            <button type="submit"
+                                    class="bg-white w-full text-[#1a1a1a] bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                Crea account
+                            </button>
+                            <p class="text-sm font-light text-[#adadad] text-center">
+                                Hai un account Telegram? <a href="t.me/carbmapbot/gasmap"
+                                                            class="font-medium text-primary-600 hover:underline dark:text-primary-500">Accedi
+                                qui</a>
+                            </p>
+                        </form>
 
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -88,43 +103,5 @@
         </footer>
     </div>
 </div>
-
-<script>
-
-    let user = null;
-    if (window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
-    user = window.Telegram.WebApp.initDataUnsafe.user;
-
-document.getElementById('signup-button-container').innerHTML = `
- <a href="{% url 'gasmapApp:signup' %}">
-                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                                    <span class="truncate">Risparmia</span>
-                                </button>
-                            </a>`;
-
-          fetch('{% url "gasmapApp:check_user" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            body: JSON.stringify({ id_user: user.id })
-        })
-
-
-
-} else{
-document.getElementById('signup-button-container').innerHTML = `
- <a href="{% url 'gasmapApp:signup' %}">
-                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                                    <span class="truncate">Registrati</span>
-                                </button>
-                            </a>`;
-    }
-
-
-</script>
-
-
 </body>
 </html>

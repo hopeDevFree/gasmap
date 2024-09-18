@@ -1,11 +1,15 @@
 from datetime import datetime
 
+from django.contrib.auth import login
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 
 import requests
-from .models import Item
+from .models import Item, User
+
 from .forms import ItemForm
+
+from django import forms
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0',
@@ -175,5 +179,23 @@ def add_station(request):
     return redirect('gasmapApp:item_list')
 
 
+def signup(request):
+    return render(request, 'registration/signup.html')
+
+
 def home(request):
     return render(request, 'gasmapApp/home.html')
+
+
+def check_user(request):
+    id_user = request.POST.get('id_user')
+
+    try:
+        user = User.objects.get(id=id_user)
+
+    except User.DoesNotExist:
+
+        User.objects.create(id=id_user)
+        return redirect('gasmapApp:item_list')
+
+    return render(request, 'gasmapApp/home.html', {'user': user})
