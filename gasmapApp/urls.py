@@ -14,5 +14,6 @@ urlpatterns = [
     path('add_station/', views.add_station, name='add_station'),
     path('signup', views.signup, name='signup'),
     path('check_user', views.check_user, name='check_user'),
-    path('home', views.home, name='home')
+    path('home', views.home, name='home'),
+    path('user_addresses', views.user_addresses, name='user_addresses')
 ]

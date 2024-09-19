@@ -202,3 +202,7 @@ def check_user(request):
         return render(request, 'gasmapApp/home.html', {'user': user})
 
     return HttpResponse('Metodo non supportato', status=405)
+
+
+def user_addresses(request):
+    return render(request, 'registration/signup.html')

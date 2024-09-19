@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
     <link
@@ -17,14 +17,23 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 <body>
+{% load static %}
 
-<div class="relative flex size-full min-h-screen flex-col bg-[#1a1a1a] dark group/design-root overflow-x-hidden"
-     style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div
+        class="relative flex size-full min-h-screen flex-col bg-[#1a1a1a] dark group/design-root overflow-x-hidden"
+        style="font-family: Inter, 'Noto Sans', sans-serif"
+>
     <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#363636] px-10 py-3">
+        <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#363636] px-10 py-3"
+        >
             <div class="flex items-center gap-4 text-white">
                 <div class="size-4">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
                         <path
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
@@ -39,37 +48,52 @@
                         ></path>
                     </svg>
                 </div>
-                <a href="{% url 'gasmapApp:home' %}"><h2
-                        class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">TrackFuel</h2></a>
+                <a href="{% url 'gasmapApp:home' %}"
+                ><h2
+                        class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                >
+                    TrackFuel
+                </h2></a
+                >
             </div>
-            <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-                <span class="truncate">Accedi</span>
-            </button>
+
+            <div id="button-user"></div>
         </header>
         <div class="flex flex-1 justify-center py-5">
-            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div
+                    class="layout-content-container flex flex-col max-w-[960px] flex-1"
+            >
                 <div class="@container">
                     <div class="@[480px]:p-4">
                         <div
                                 class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                                style='width:100%; min-height: 480px; background-size: cover; background-position: center; background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/dbb64df1-c6b5-4fd6-9fa6-0efd6b8e58b0.png");'
+                                style="
+                    width: 100%;
+                    min-height: 480px;
+                    background-size: cover;
+                    background-position: center;
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.1) 0%,
+                        rgba(0, 0, 0, 0.4) 100%
+                      ),
+                      url('https://cdn.usegalileo.ai/sdxl10/dbb64df1-c6b5-4fd6-9fa6-0efd6b8e58b0.png');
+                  "
                         >
                             <div class="flex flex-col gap-2 text-center">
-                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                <h1
+                                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                                >
                                     TrackFuel.
                                 </h1>
-                                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                                    Trova subito i prezzi migliori del carburante e risparmia tempo e denaro con
-                                    facilità.
+                                <h2
+                                        class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
+                                >
+                                    Trova subito i prezzi migliori del carburante e risparmia
+                                    tempo e denaro con facilità.
                                 </h2>
                             </div>
 
-
                             <div id="signup-button-container"></div>
-
-
                         </div>
                     </div>
                 </div>
@@ -78,11 +102,12 @@
 
         <footer class="flex justify-center">
             <div class="flex max-w-[960px] flex-1 flex-col">
-                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-
-
-                    <p class="text-[#adadad] text-base font-normal leading-normal">© 2024 TrackFuel. All rights
-                        reserved.</p>
+                <footer
+                        class="flex flex-col gap-6 px-5 py-10 text-center @container"
+                >
+                    <p class="text-[#adadad] text-base font-normal leading-normal">
+                        © 2024 TrackFuel. All rights reserved.
+                    </p>
                 </footer>
             </div>
         </footer>
@@ -90,46 +115,96 @@
 </div>
 
 <script>
-
     let user = null;
-    if (window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
-    user = window.Telegram.WebApp.initDataUnsafe.user;
+    if (
+      window.Telegram.WebApp.initDataUnsafe &&
+      window.Telegram.WebApp.initDataUnsafe.user
+    ) {
+      user = window.Telegram.WebApp.initDataUnsafe.user;
 
-document.getElementById('signup-button-container').innerHTML = `
- <a href="{% url 'gasmapApp:signup' %}">
-                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                                    <span class="truncate">Risparmia</span>
-                                </button>
-                            </a>`;
+      document.getElementById("signup-button-container").innerHTML = `
+<a href="{% url 'gasmapApp:signup' %}">
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                                <span class="truncate">Inizia</span>
+                            </button>
+                        </a>`;
+
+      document.getElementById(
+        "button-user"
+      ).innerHTML = `<div class=" relative inline-block text-left dropdown">
+  <span class="rounded-md shadow-sm"
+    ><button class="w-10 h-10 inline-flex justify-center items-center leading-5 transition duration-150 ease-in-out bg-[#1a1a1a] rounded-xl "
+      type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+  <img src="{% static 'gasmapapp/icons/more-icon.svg' %}" alt="Icona" class="h-6 w-6">
+</button></span>
+
+  <div class="dropdown-menu absolute right-0 z-50 opacity-0 invisible transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+
+    <div class="absolute right-0 w-56 mt-2 origin-top-right bg-[#1a1a1a] border border-[#363636] divide-y divide-[#363636] rounded-xl shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
 
 
-const data = new URLSearchParams();
-data.append('id_user', user.id);
-
-          fetch('{% url "gasmapApp:check_user" %}', {
-            method: 'POST',
-            headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            body: data.toString()
-        })
+      <div class="py-1">
+       <a href="javascript:void(0)" tabindex="0" class="text-white flex items-center w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem">
+  <img src="{% static 'gasmapapp/icons/glass-icon.svg' %}" alt="Icona" class="mr-3" >
+  Cerca distributori
+</a>
 
 
+<a href="javascript:void(0)" tabindex="1" class="text-white flex items-center w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem">
+  <img src="{% static 'gasmapapp/icons/pin-icon.svg' %}" alt="Icona" class="ml-0.5 mr-3.5" >
+  Gestisci indirizzi
+</a>
 
-} else{
-document.getElementById('signup-button-container').innerHTML = `
- <a href="{% url 'gasmapApp:signup' %}">
-                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                                    <span class="truncate">Registrati</span>
-                                </button>
-                            </a>`;
+<a href="javascript:void(0)" tabindex="2" class="text-white flex items-center w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem">
+  <img src="{% static 'gasmapapp/icons/trend-icon.svg' %}" alt="Icona" class="mr-3" >
+  Traccia prezzi
+</a>
 
+</div>
+      <div class="py-1">
+        <a href="javascript:void(0)" tabindex="3" class="text-white flex  w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >
+            <img src="{% static 'gasmapapp/icons/user.svg' %}" alt="Icona" class="mr-3" >
+
+
+        Profilo</a></div>
+    </div>
+  </div>
+</div>
+
+<style>
+.dropdown:focus-within .dropdown-menu {
+opacity:1;
+transform: translate(0) scale(1);
+visibility: visible;
 }
+  </style>`;
 
+      const data = new URLSearchParams();
+      data.append("id_user", user.id);
 
+      fetch('{% url "gasmapApp:check_user" %}', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-CSRFToken": "{{ csrf_token }}",
+        },
+        body: data.toString(),
+      });
+    } else {
+      document.getElementById("signup-button-container").innerHTML = `
+<a href="{% url 'gasmapApp:signup' %}">
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                                <span class="truncate">Registrati</span>
+                            </button>
+                        </a>`;
+
+      document.getElementById("button-user").innerHTML = `
+<a href="{% url 'gasmapApp:signup' %}"><button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Accedi</span>
+            </button></a>`;
+    }
 </script>
-
-
 </body>
 </html>
